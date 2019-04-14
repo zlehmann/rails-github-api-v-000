@@ -7,6 +7,7 @@ class RepositoriesController < ApplicationController
     end
     body = JSON.parse(resp.body)
     @username = body
+    @token = session[:token]
   end
 
 end
