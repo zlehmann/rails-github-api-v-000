@@ -4,8 +4,8 @@ class RepositoriesController < ApplicationController
     resp = Faraday.get("https://api.github.com/user") do |req|
       req.params['oauth_token'] = session[:token]
     end
-
-    @username = JSON.parse(resp.body)["login"]
+    body = JSON.parse(resp.body)
+    @username = body["login"]
   end
 
 end
