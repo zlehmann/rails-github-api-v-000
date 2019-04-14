@@ -7,7 +7,7 @@ class RepositoriesController < ApplicationController
     end
     body = JSON.parse(resp.body)
     @username = body[:login]
-    @token = session[:token]
+    @token = ENV['ACCESS_TOKEN']
   end
 
 end
