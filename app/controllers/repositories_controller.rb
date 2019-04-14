@@ -6,7 +6,7 @@ class RepositoriesController < ApplicationController
       req.headers['Accept'] = 'application/json'
     end
     body = JSON.parse(resp.body)
-    @username = body
+    @username = body[:login]
     @token = session[:token]
   end
 
